@@ -460,7 +460,7 @@ struct gotoh_alignment_score_dispatch
             const uint8 q  = pattern[i];
             const uint8 qq = quals[i];
 
-            const score_type V = scoring.match(qq);
+            const score_type V = scoring.match(q, q, qq);
 
             //
             // arrows for backtracking - in the E,F case, SUBSTITUTION means the score came from H,

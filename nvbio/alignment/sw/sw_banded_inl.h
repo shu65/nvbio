@@ -390,7 +390,7 @@ struct sw_alignment_score_dispatch
             const uint8 q = pattern[i];
             const uint8 qq = quals[i];
 
-            const score_type V = scoring.match(qq);
+            const score_type V = scoring.match(q, q, qq);
 
             score_type top, left, diagonal, hi;
 

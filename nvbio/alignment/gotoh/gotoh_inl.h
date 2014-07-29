@@ -665,7 +665,7 @@ struct gotoh_alignment_score_dispatch<BAND_LEN,TYPE,PatternBlockingTag,symbol_ty
                 const symbol_type q  = query[ block + t ];
                 const uint8       qq = quals[ block + t ];
 
-                q_cache[ t ] = make_int4( q, scoring.match(qq), qq, 0 );
+                q_cache[ t ] = make_int4( q, scoring.match(q, q, qq), qq, 0 );
             }
 
             // initialize the first band
@@ -728,7 +728,7 @@ struct gotoh_alignment_score_dispatch<BAND_LEN,TYPE,PatternBlockingTag,symbol_ty
                     const symbol_type q  = query[ block + t ];
                     const uint8       qq = quals[ block + t ];
 
-                    q_cache[ t ] = make_int4( q, scoring.match(qq), qq, 0 );
+                    q_cache[ t ] = make_int4( q, scoring.match(q, q, qq), qq, 0 );
                 }
             }
 

@@ -86,6 +86,7 @@ struct SimpleSmithWatermanScheme
         m_match(match), m_mismatch(mm), m_deletion(del), m_insertion(ins) {}
 
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 match(const uint8 q = 0)      const { return m_match; };
+    NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 match(const uint8 a, const uint8 b, const uint8 q = 0)      const { return m_match; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 mismatch(const uint8 q = 0)   const { return m_mismatch; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 mismatch(const uint8 a, const uint8 b, const uint8 q = 0)   const { return m_mismatch; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 deletion()                    const { return m_deletion; };
@@ -108,6 +109,7 @@ struct SimpleGotohScheme
         m_match(match), m_mismatch(mm), m_gap_open(gap_open), m_gap_ext(gap_ext) {}
 
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 match(const uint8 q = 0)      const { return m_match; };
+    NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 match(const uint8 a, const uint8 b, const uint8 q = 0)      const { return m_match; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 mismatch(const uint8 q = 0)   const { return m_mismatch; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 mismatch(const uint8 a, const uint8 b, const uint8 q = 0)   const { return m_mismatch; };
     NVBIO_FORCEINLINE NVBIO_HOST_DEVICE int32 pattern_gap_open()            const { return m_gap_open; };

@@ -129,7 +129,7 @@ int32 sw_alignment_score(
                     }
 
                     // compute the match/mismatch score
-                    const score_type S_ij = (r_j == s_i) ? scoring.match(q_i) : scoring.mismatch(q_i);
+                    const score_type S_ij = (r_j == s_i) ? scoring.match(r_j, s_i, q_i) : scoring.mismatch(r_j, s_i, q_i);
 
                     // determine the current cell score
                     hi = nvbio::max3(h_diag + S_ij,

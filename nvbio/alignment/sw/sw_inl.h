@@ -470,7 +470,7 @@ struct sw_alignment_score_dispatch<BAND_LEN,TYPE,PatternBlockingTag,symbol_type>
         {
             const symbol_type q_j     = q_cache[ j-1 ].x;
             const uint8       qq_j    = q_cache[ j-1 ].y;
-            const score_type S_ij     = (r_i == q_j) ? scoring.match(qq_j) : scoring.mismatch( r_i, q_j, qq_j );
+            const score_type S_ij     = (r_i == q_j) ? scoring.match(r_i, q_j, qq_j) : scoring.mismatch( r_i, q_j, qq_j );
             const score_type diagonal = prev      + S_ij;
             const score_type top      = band[j]   + G;
             const score_type left     = band[j-1] + I;
